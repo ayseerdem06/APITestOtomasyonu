@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 public class C06_Put_ResponseBilgileriAssertion {
 
     @Test
-    public void test01(){
+    public void test01() {
         /*
 
         https://jsonplaceholder.typicode.com/posts/3 url'ine
@@ -29,10 +29,10 @@ public class C06_Put_ResponseBilgileriAssertion {
 
          */
 
-        // 1- end point ve request body olustur
-        String url="https://jsonplaceholder.typicode.com/posts/3";
+        // 1- Endpoint ve request body olustur
+        String url = "https://jsonplaceholder.typicode.com/posts/3";
 
-        JSONObject requestBody=new JSONObject();
+        JSONObject requestBody = new JSONObject();
         requestBody.put("id", 1);
         requestBody.put("title", "Aslı");
         requestBody.put("body", "Han");
@@ -42,14 +42,14 @@ public class C06_Put_ResponseBilgileriAssertion {
 
         // 3- request gonder ve donen response'i kaydet
 
-        Response response=given().contentType(ContentType.JSON).
-                            when().body(requestBody.toString()).put(url);
+        Response response = given().contentType(ContentType.JSON).
+                when().body(requestBody.toString()).put(url);
 
         // 4- Assertion
         response.then().assertThat().
                 statusCode(200).
                 contentType("application/json; charset=utf-8").
-                header("Server","cloudflare").
+                header("Server", "cloudflare").
                 statusLine("HTTP/1.1 200 OK");
 
 

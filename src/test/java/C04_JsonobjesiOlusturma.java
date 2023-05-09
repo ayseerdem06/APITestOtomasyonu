@@ -4,7 +4,7 @@ import org.junit.Test;
 public class C04_JsonobjesiOlusturma {
 
     @Test
-    public void test01(){
+    public void test01() {
 
         /*
         {
@@ -14,10 +14,10 @@ public class C04_JsonobjesiOlusturma {
         }
          */
 
-        JSONObject obj1=new JSONObject();
-        obj1.put("title","Ahmet");
-        obj1.put("body","Merhaba");
-        obj1.put("userId",1);
+        JSONObject obj1 = new JSONObject();
+        obj1.put("title", "Ahmet");
+        obj1.put("body", "Merhaba");
+        obj1.put("userId", 1);
         System.out.println(obj1);
 
         /*
@@ -30,7 +30,6 @@ public class C04_JsonobjesiOlusturma {
          */
 
     }
-
 
 
 }

@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 public class C02_Get_ResponseBilgilerininManuelTestEdilmesi {
 
     @Test
-    public void test01(){
+    public void test01() {
         /*
         https://restful-booker.herokuapp.com/booking/10 url'ine
         bir GET request gonderdigimizde donen Response'un,
@@ -18,17 +18,17 @@ public class C02_Get_ResponseBilgilerininManuelTestEdilmesi {
          */
 
         // 1- Request body ve end-Point hazirlama
-        String url="https://restful-booker.herokuapp.com/booking/10";
+        String url = "https://restful-booker.herokuapp.com/booking/10";
 
         // 2- Expected body olustur
         // 3- Request gonderip, donen response'i kaydet
-        Response response=given().when().get(url);
+        Response response = given().when().get(url);
         response.prettyPrint();
-        System.out.println("status code: "+ response.getStatusCode()+
-        "\nContent type:" + response.getContentType()+
-                "\nServer Header degeri:" + response.getHeader("Server")+
-                "\nStatus Line:" + response.getStatusLine()+
-                "\nResponse suresi:" + response.getTime()+"ms");
+        System.out.println("status code: " + response.getStatusCode() +
+                "\nContent type:" + response.getContentType() +
+                "\nServer Header degeri:" + response.getHeader("Server") +
+                "\nStatus Line:" + response.getStatusLine() +
+                "\nResponse suresi:" + response.getTime() + "ms");
 
         // 4- Assertion
     }

@@ -4,7 +4,7 @@ import org.junit.Test;
 public class C05_JsonobjesiOlusturma {
 
     @Test
-    public void test01(){
+    public void test01() {
 
         /*
         {
@@ -21,18 +21,18 @@ public class C05_JsonobjesiOlusturma {
          */
 
         // Once Inner Json Objesini olusturalım
-        JSONObject innerJsonObject=new JSONObject();
-        innerJsonObject.put("checkin" , "2018-01-01");
-        innerJsonObject.put("checkout" , "2019-01-01");
+        JSONObject innerJsonObject = new JSONObject();
+        innerJsonObject.put("checkin", "2018-01-01");
+        innerJsonObject.put("checkout", "2019-01-01");
 
         // sonra outer json objesini olusturup, yeri geldiginde inner objeyi koyalım
-        JSONObject outerJsonObject=new JSONObject();
-        outerJsonObject.put("firstname" , "Jim");
-        outerJsonObject.put("lastname" , "Brown");
-        outerJsonObject.put("totalprice" , 111);
-        outerJsonObject.put("depositpaid" , true);
-        outerJsonObject.put("bookingdates",innerJsonObject);
-        outerJsonObject.put("additionalneeds" , "Breakfast");
+        JSONObject outerJsonObject = new JSONObject();
+        outerJsonObject.put("firstname", "Jim");
+        outerJsonObject.put("lastname", "Brown");
+        outerJsonObject.put("totalprice", 111);
+        outerJsonObject.put("depositpaid", true);
+        outerJsonObject.put("bookingdates", innerJsonObject);
+        outerJsonObject.put("additionalneeds", "Breakfast");
 
         System.out.println(outerJsonObject);
 

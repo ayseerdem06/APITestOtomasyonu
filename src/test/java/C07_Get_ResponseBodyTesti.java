@@ -22,7 +22,7 @@ public class C07_Get_ResponseBodyTesti {
 
          */
 
-        // 1- end point ve response body hazırla
+        // 1- Endpoint ve response body hazırla
         String url = "https://jsonplaceholder.typicode.com/posts/44";
 
         // 2- Expected data hazırla

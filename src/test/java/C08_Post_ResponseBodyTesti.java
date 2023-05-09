@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.responseSpecification;
 public class C08_Post_ResponseBodyTesti {
 
     @Test
-    public void test01(){
+    public void test01() {
          /*
         https://jsonplaceholder.typicode.com/posts url'ine  asagidaki body ile
          bir POST request gonderdigimizde;
@@ -29,9 +29,9 @@ public class C08_Post_ResponseBodyTesti {
         "body" nin "API" kelimesi icerdigini  test edin.
          */
 
-        // 1-end point ve request body olustur
-        String url="https://jsonplaceholder.typicode.com/posts";
-        JSONObject requestBody=new JSONObject();
+        // 1-Endpoint ve request body olustur
+        String url = "https://jsonplaceholder.typicode.com/posts";
+        JSONObject requestBody = new JSONObject();
         requestBody.put("title", "API");
         requestBody.put("body", "API ogrenmek ne guzel");
         requestBody.put("userId", 10);
@@ -39,16 +39,15 @@ public class C08_Post_ResponseBodyTesti {
         // 2- Expected data oluştur
 
         // 3- Request gonder ve respose'u kaydet
-        Response response=given().contentType(ContentType.JSON).
+        Response response = given().contentType(ContentType.JSON).
                 when().body(requestBody.toString()).post(url);
         response.prettyPrint();
 
         // Assertion
         response.then().assertThat().statusCode(201).
                 contentType(ContentType.JSON).body("title", Matchers.equalTo("API")).
-                body("userId",Matchers.lessThan(100)).
-                body("body",Matchers.containsString("API"));
-
+                body("userId", Matchers.lessThan(100)).
+                body("body", Matchers.containsString("API"));
 
 
     }
